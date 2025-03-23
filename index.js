@@ -8,6 +8,15 @@ const movieRoute = require("./routes/movies");
 dotenv.config(); // Load environment variables
 app.use(express.json()); // Add this line to parse JSON request bodies
 
+const cors = require("cors");
+app.use(
+  cors({
+    origin: "https://cinema-journal-frontend.vercel.app/",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
+
 mongoose
   .connect(process.env.MONGODB_URL, {
     useNewUrlParser: true,
