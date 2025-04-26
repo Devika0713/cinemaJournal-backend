@@ -13,7 +13,7 @@ app.use(
   cors({
     origin: "https://cinema-journal-frontend.vercel.app/",
     methods: ["GET", "POST", "PUT", "DELETE"],
-     allowedHeaders: "Content-Type,Authorization"
+    allowedHeaders: "Content-Type,Authorization",
   })
 );
 
@@ -26,7 +26,7 @@ mongoose
   .catch((err) => console.log(err));
 
 app.get("/", (req, res) => {
-  res.send("Hello World"); // Send response to the client
+  res.send("Hello World testing backend"); // Send response to the client
 });
 
 app.use("/api/shows", showRoute);
